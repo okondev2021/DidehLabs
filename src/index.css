@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Space Palette */
+  --color-bg: #06060a;
+  --color-bg2: #0d0d14;
+  --color-bg3: #12121c;
+  --color-card-custom: #14141f;
+  --color-card-custom2: #1a1a28;
+  --color-accent-custom: #6ee7b7;
+  --color-accent2: #a78bfa;
+  --color-accent3: #f472b6;
+  --color-text-custom: #f0eefc;
+  --color-muted-custom: #8886a0;
+
+  /* Typography */
+  --font-head: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* Framer/CSS Native Marquee */
+  --animate-marquee: marquee 28s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* Custom padding container utility */
+@utility section-padding {
+  padding: 5rem 5%;
+
+  @media (min-width: 768px) {
+    padding: 7.5rem 5%;
+  }
+}
