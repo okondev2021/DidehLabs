@@ -19,7 +19,7 @@ const Hero = ({ fadeUpVariant, staggerContainer }: { fadeUpVariant: any, stagger
                 </motion.h1>
 
                 <motion.p variants={fadeUpVariant} className="text-[1.1rem] text-muted-custom max-w-[540px] font-light leading-relaxed mb-10">
-                    DidehLabs audits, rebuilds, and architects web infrastructure for businesses worldwide — from Lagos to London. Performance-first. Conversion-focused. No agency fluff.
+                    DidehLabs audits, rebuilds, and architects web infrastructure for businesses worldwide. Performance-first. Conversion-focused. No agency fluff.
                 </motion.p>
 
                 <motion.div variants={fadeUpVariant} className="flex items-center justify-center gap-4 flex-wrap">

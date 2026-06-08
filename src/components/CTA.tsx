@@ -20,7 +20,7 @@ const CTA = ({ fadeUpVariant }: { fadeUpVariant: any }) => {
                         WhatsApp
                     </a>
                 </div>
-                <p className="mt-[1.8rem] text-[0.82rem] text-muted-custom">okonjedidiah5@gmail.com &nbsp;·&nbsp; Lagos, Nigeria &nbsp;·&nbsp; Remote-First</p>
+                <p className="mt-[1.8rem] text-[0.82rem] text-muted-custom">okonjedidiah5@gmail.com &nbsp;·&nbsp;&nbsp;·&nbsp; Remote-First</p>
             </motion.div>
         </section>
     );
