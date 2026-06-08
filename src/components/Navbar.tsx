@@ -20,11 +20,7 @@ const Navbar = () => {
   return (
     <>
       <nav id="navbar" className="fixed top-0 left-0 right-0 z-[200] flex items-center justify-between px-[5%] h-[68px] bg-bg/92 backdrop-blur-[14px] border-b border-white/5">
-
-
-
         <Logo/>
-        
         <ul className="hidden md:flex items-center gap-10 list-none">
           <li><a href="#how" className="text-muted-custom text-[0.88rem] tracking-wide hover:text-text-custom transition-colors">Process</a></li>
           <li><a href="#services" className="text-muted-custom text-[0.88rem] tracking-wide hover:text-text-custom transition-colors">Services</a></li>
