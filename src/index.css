@@ -1,71 +1,70 @@
 @import "tailwindcss";
 
 @theme {
-  /* didehLabs Terminal Palette */
-  --color-bg: #06060a;
-  /* Deep deep-space terminal canvas */
-  --color-bg2: #0d0d14;
-  /* Panel / Sidebar surface */
-  --color-bg3: #12121c;
-  /* Card rest state */
-  --color-card-custom: #14141f;
-  /* Elevated inner elements */
-  --color-card-custom2: #1a1a28;
-  /* Focused component boundaries */
+    /* didehLabs Terminal Palette */
+    --color-bg: #06060a;
+    /* Deep deep-space terminal canvas */
+    --color-bg2: #0d0d14;
+    --color-bg3: #12121c;
+    /* Card rest state */
+    --color-card-custom: #14141f;
+    /* Elevated inner elements */
+    --color-card-custom2: #1a1a28;
+    /* Focused component boundaries */
 
-  /* The Operational Status Accents:
+    /* The Operational Status Accents:
     - Accent 1 is now your "Active Sentinel / System Healthy" terminal green.
     - Accent 2 is your "Deep Analytics / Multi-Agent Loop" violet.
     - Accent 3 is your "Revenue Leak / Critical Error" warning pink.
   */
-  --color-accent-custom: #6ee7b7;
-  /* Active Status / Patch Fixed (Emerald) */
-  --color-accent2: #a78bfa;
-  /* Agent Pipeline Logic (Violet) */
-  --color-accent3: #f472b6;
-  /* Revenue Leak / Missing Asset Warning (Pink) */
+    --color-accent-custom: #6ee7b7;
+    /* Active Status / Patch Fixed (Emerald) */
+    --color-accent2: #a78bfa;
+    /* Agent Pipeline Logic (Violet) */
+    --color-accent3: #f472b6;
+    /* Revenue Leak / Missing Asset Warning (Pink) */
 
-  --color-text-custom: #f0eefc;
-  /* Ultra-crisp high-contrast monospace text */
-  --color-muted-custom: #8886a0;
-  /* System log timestamps / muted labels */
+    --color-text-custom: #f0eefc;
+    /* Ultra-crisp high-contrast monospace text */
+    --color-muted-custom: #8886a0;
+    /* System log timestamps / muted labels */
 
-  /* Typography */
-  --font-head: "Syne", sans-serif;
-  /* Aggressive, wide-set headers for didehLabs */
-  --font-body: "DM Sans", sans-serif;
-  /* Clean, highly readable data grids */
-  --font-mono: "Geist Mono", monospace;
-  /* Added for your JSON payloads & agent execution logs */
+    /* Typography */
+    --font-head: "Syne", sans-serif;
+    /* Aggressive, wide-set headers for didehLabs */
+    --font-body: "DM Sans", sans-serif;
+    /* Clean, highly readable data grids */
+    --font-mono: "Geist Mono", monospace;
+    /* Added for your JSON payloads & agent execution logs */
 
-  /* Framer/CSS Native Marquee (For showing live business URLs being scanned) */
-  --animate-marquee: marquee 28s linear infinite;
+    /* Framer/CSS Native Marquee (For showing live business URLs being scanned) */
+    --animate-marquee: marquee 28s linear infinite;
 
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
     }
-
-    100% {
-      transform: translateX(-50%);
-    }
-  }
 }
 
 /* Custom design system utilities */
 @utility section-padding {
-  padding: 5rem 5%;
+    padding: 5rem 5%;
 
-  @media (min-width: 768px) {
-    padding: 7.5rem 5%;
-  }
+    @media (min-width: 768px) {
+        padding: 7.5rem 5%;
+    }
 }
 
 /* Status Indicator Dot utility for didehLabs agent states */
 @utility sentinel-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 9999px;
-  background-color: var(--color-accent-custom);
-  box-shadow: 0 0 12px var(--color-accent-custom);
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: var(--color-accent-custom);
+    box-shadow: 0 0 12px var(--color-accent-custom);
 }
