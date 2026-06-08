@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Logo from "./Logo";
 
 const Navbar = () => {
     
@@ -19,9 +20,12 @@ const Navbar = () => {
   return (
     <>
       <nav id="navbar" className="fixed top-0 left-0 right-0 z-[200] flex items-center justify-between px-[5%] h-[68px] bg-bg/92 backdrop-blur-[14px] border-b border-white/5">
-        <a className="font-head text-[1.4rem] font-extrabold tracking-tight text-text-custom" href="#hero">
+
+        {/* <a className="font-head text-[1.4rem] font-extrabold tracking-tight text-text-custom" href="#hero">
           Ascend<span className="text-accent-custom">IQ</span>
-        </a>
+        </a> */}
+
+        <Logo/>
         
         <ul className="hidden md:flex items-center gap-10 list-none">
           <li><a href="#how" className="text-muted-custom text-[0.88rem] tracking-wide hover:text-text-custom transition-colors">Process</a></li>

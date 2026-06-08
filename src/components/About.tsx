@@ -30,7 +30,7 @@ const About = ({ fadeUpVariant }: { fadeUpVariant: any }) => {
                     <p className="text-[0.75rem] font-semibold tracking-[0.14em] uppercase text-accent-custom mb-4">The Builder Behind It</p>
                     <h2 className="font-head text-[1.8rem] sm:text-[2.6rem] font-extrabold tracking-tighter mb-[1.2rem] text-text-custom leading-tight">4+ years shipping production systems. Not mockups.</h2>
                     <p className="text-muted-custom text-[0.98rem] font-light leading-relaxed mb-4">I'm Jedidiah — a full-stack engineer who has led cross-functional teams, architected blockchain-based healthcare traceability on Hedera, built fintech payment APIs with Paystack, and shipped EdTech platforms from Lagos. Healthcare, Fintech, EdTech — all real production code.</p>
-                    <p className="text-muted-custom text-[0.98rem] font-light leading-relaxed mb-4">AscendIQ is the intelligence system I built to find businesses silently losing customers online, and fix it. The audit engine, the lead scoring, the AI-powered outreach — all custom code, running now.</p>
+                    <p className="text-muted-custom text-[0.98rem] font-light leading-relaxed mb-4">DidehLabs is the intelligence system I built to find businesses silently losing customers online, and fix it. The audit engine, the lead scoring, the AI-powered outreach — all custom code, running now.</p>
                     <p className="text-muted-custom text-[0.98rem] font-light leading-relaxed mb-4">No agency intermediaries. No outsourced mystery developers. You work directly with the engineer who built the tools and will build yours.</p>
 
                     <div className="flex flex-wrap gap-2 mt-6">

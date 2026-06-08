@@ -31,7 +31,7 @@ const DiagnosticEngine = () => {
                         <div className="w-[10px] h-[10px] rounded-full bg-[#ff5f57]" />
                         <div className="w-[10px] h-[10px] rounded-full bg-[#ffbc2e]" />
                         <div className="w-[10px] h-[10px] rounded-full bg-[#29c941]" />
-                        <span className="text-[0.76rem] text-muted-custom ml-2 font-mono">ascendiq_engine › audit_result.json</span>
+                        <span className="text-[0.76rem] text-muted-custom ml-2 font-mono">didehlabs_engine › audit_result.json</span>
                     </div>
                     <div className="p-6">
                         <div className="text-[0.78rem] text-muted-custom mb-[1.2rem] flex justify-between items-center">
