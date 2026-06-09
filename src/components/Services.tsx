@@ -1,50 +1,86 @@
-"use client";
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { LayoutGrid, Zap, Target, Bot } from 'lucide-react'
+import { motion } from 'framer-motion'
+import SectionHeading from './SectionHeading'
 
-const Services = ({ fadeUpVariant, staggerContainer }: { fadeUpVariant: any, staggerContainer: any }) => {
-    const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-    const coreServices = [
-        { icon: "🏗️", title: "Website Design & Build", desc: "Custom-engineered, fast, mobile-first sites built to convert visitors into customers. No templates. No page builders. Real, maintainable code.", tags: ["Next.js", "React", "Django", "Tailwind"] },
-        { icon: "📊", title: "Performance Engineering", desc: "Slow sites bleed customers silently. We pinpoint and fix the exact bottlenecks — from asset loading to server response — that make people bounce.", tags: ["Lighthouse", "Core Web Vitals", "CDN"] },
-        { icon: "📱", title: "Mobile Experience", desc: "Most customers are on a phone. We audit and rebuild mobile UX so nothing is broken, clipped, or slow on small screens where it matters most.", tags: ["Responsive Design", "PWA", "Touch UX"] },
-        { icon: "🔗", title: "Conversion Architecture", desc: "Booking flows, WhatsApp CTAs, pricing clarity, contact funnels — we wire up every path that turns a passive visitor into a paying customer.", tags: ["CTA Systems", "WhatsApp", "Booking Flows"] },
-        { icon: "🔍", title: "SEO & Discoverability", desc: "Invisible on Google means irrelevant. We fix on-page SEO, schema markup, metadata, and local search presence so the right people find you.", tags: ["On-Page SEO", "Schema Markup", "Local SEO"] },
-        { icon: "🤖", title: "AI Integration", desc: "From automated intelligence pipelines to LLM-powered product features, we embed AI where it actually creates business value — not just for the buzzword.", tags: ["OpenAI", "Gemini", "Claude", "RAG"] },
-    ];
+const pillars = [
+  {
+    icon: LayoutGrid,
+    title: 'Design & Build (Frontend Systems)',
+    body:
+      'Custom-engineered, high-performance, mobile-first web applications built with React, Next.js, and modern tools. No templates, no page builders—pure, maintainable code.',
+  },
+  {
+    icon: Zap,
+    title: 'Performance Engineering',
+    body:
+      'Speed is a direct revenue multiplier. We profile and eliminate bottlenecks—asset loading, server latency, database calls—to guarantee rapid, bounce-free page loads.',
+  },
+  {
+    icon: Target,
+    title: 'Conversion Architecture',
+    body:
+      'Converting traffic into clients. We audit checkout paths, lead generation forms, WhatsApp integrations, and booking flows, building high-conversion funnels.',
+  },
+  {
+    icon: Bot,
+    title: 'AI Pipelines & Automation Systems',
+    body:
+      'Intelligent features that automate tasks and add value. We integrate LLMs, RAG systems, and custom automated agents directly into your existing codebase.',
+  },
+]
 
-    return (
-        <section id="services" className="bg-bg section-padding" ref={ref}>
-            <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={fadeUpVariant} className="mb-14">
-                <p className="text-[0.75rem] font-semibold tracking-[0.14em] uppercase text-accent-custom mb-4">What We Build</p>
-                <h2 className="font-head text-[1.9rem] sm:text-4xl font-extrabold tracking-tighter mb-[1.2rem] max-w-[640px] text-text-custom leading-tight">
-                    End-to-end web engineering, worldwide
-                </h2>
-                <p className="text-[1rem] font-light text-muted-custom max-w-[520px] leading-relaxed">
-                    Whether your site is broken, slow, or nonexistent — we handle everything from architecture to deployment.
-                </p>
-            </motion.div>
+const Services = () => {
+  return (
+    <section id="services" className="section-y border-b border-border bg-background">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-10">
+        <SectionHeading
+          subtitle="Our services"
+          title="Integrated delivery, end to end"
+          description="We build, optimize, and automate web systems for ambitious companies worldwide—combining deep engineering discipline with conversion-focused UX and custom AI systems."
+          centered
+        />
 
-            <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {coreServices.map((srv, idx) => (
-                    <motion.div
-                        key={idx}
-                        variants={fadeUpVariant}
-                        whileHover={{ y: -3 }}
-                        className="bg-card-custom border border-white/5 rounded-2xl p-8 relative overflow-hidden group hover:border-accent-custom/20 transition-colors"
-                    >
-                        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent-custom to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <div className="text-[1.5rem] mb-[1.2rem]">{srv.icon}</div>
-                        <h3 className="font-head text-[1.05rem] font-bold text-text-custom mb-[0.6rem] tracking-tight">{srv.title}</h3>
-                        <p className="text-[0.88rem] text-muted-custom leading-relaxed mb-[1.2rem]">{srv.desc}</p>
-                        <div className="flex flex-wrap gap-2">
-                            {srv.tags.map(t => <span key={t} className="text-[0.72rem] font-medium tracking-wider px-[0.65rem] py-[0.22rem] rounded-full bg-white/[0.03] border border-white/5 text-muted-custom">{t}</span>)}
-                        </div>
-                    </motion.div>
-                ))}
-            </motion.div>
-        </section>
-    );
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.07 } },
+          }}
+          className="mt-16 grid gap-px bg-border md:grid-cols-2"
+        >
+          {pillars.map((p) => {
+            const Icon = p.icon
+            return (
+              <motion.article
+                key={p.title}
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
+                }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                className="group bg-background p-8 lg:p-10 cursor-default"
+              >
+                <Icon className="h-10 w-10 text-primary transition duration-300 group-hover:scale-110" strokeWidth={1.25} />
+                <h3 className="mt-6 font-heading text-xl font-bold uppercase tracking-[0.06em] text-foreground">
+                  {p.title}
+                </h3>
+                <p className="mt-4 leading-relaxed text-muted-foreground">{p.body}</p>
+                <button
+                  type="button"
+                  className="mt-6 text-sm font-bold uppercase tracking-[0.14em] text-primary transition hover:text-accent cursor-pointer"
+                  onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Learn more
+                </button>
+              </motion.article>
+            )
+          })}
+        </motion.div>
+      </div>
+    </section>
+  )
 }
 
-export default Services;
+export default Services

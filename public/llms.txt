@@ -1,8 +1,0 @@
-# didehLabs
-AI systems for web engineering, performance diagnostics, and revenue intelligence for businesses.
-
-## Key Content Areas
-
-### Home
-didehLabs builds AI-powered systems that detect and fix revenue-killing issues in business websites using automation, performance analysis, and conversion optimization.
-- [Home](/)

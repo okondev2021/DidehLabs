@@ -1,21 +1,39 @@
-const Marquee = () => {
-    const targetItems = [
-        "Performance Engineering", "Lead Intelligence", "Mobile-First Builds",
-        "SEO Architecture", "Conversion Systems", "AI Integration", "Full-Stack Development", "Trust Signal Audits"
-    ];
-    const duplicateArray = [...targetItems, ...targetItems];
+import { motion } from 'framer-motion';
 
-    return (
-        <div className="overflow-hidden border-y border-white/5 py-[0.85rem] bg-bg2">
-            <div className="flex gap-12 animate-marquee w-max whitespace-nowrap">
-                {duplicateArray.map((text, idx) => (
-                    <span key={idx} className="font-head text-[0.78rem] font-semibold tracking-widest uppercase text-muted-custom flex items-center gap-[0.8rem]">
-                        {text} <span className="text-accent-custom">·</span>
-                    </span>
-                ))}
-            </div>
-        </div>
-    );
-}
+const items = [
+  "Performance Engineering", "Lead Intelligence", "Mobile-First Builds",
+  "SEO Architecture", "Conversion Systems", "AI Integration",
+  "Full-Stack Development", "Trust Signal Audits",
+];
+
+const Marquee = () => {
+  // Double the list to create a seamless looping effect
+  const doubled = [...items, ...items];
+
+  return (
+    <div className="w-full overflow-hidden border-y border-border bg-card py-5 relative select-none">
+      {/* Side gradients to fade out text edges */}
+      <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+      
+      <motion.div
+        className="flex whitespace-nowrap gap-16 w-max pl-16"
+        animate={{ x: [0, "-50%"] }}
+        transition={{
+          repeat: Infinity,
+          ease: "linear",
+          duration: 30,
+        }}
+      >
+        {doubled.map((text, idx) => (
+          <span key={idx} className="inline-flex items-center gap-4 text-xs font-heading font-bold uppercase tracking-[0.18em] text-muted-foreground/80">
+            {text}
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+          </span>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
 export default Marquee;

@@ -1,29 +1,66 @@
-"use client";
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion'
 
-const CTA = ({ fadeUpVariant }: { fadeUpVariant: any }) => {
-    const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-    const mailToLink = "mailto:okonjedidiah5@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20DidehLabs&body=Hi%20Jedidiah%2C%0A%0AI'd%20like%20to%20discuss%20a%20project.";
-    const whatsappLink = "https://wa.me/2347042932301?text=Hi%20Jedidiah%2C%20I%20found%20DidehLabs%20and%20would%20like%20to%20discuss%20a%20project.";
-
-    return (
-        <section id="cta" className="bg-bg2 text-center relative overflow-hidden section-padding" ref={ref}>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[radial-gradient(var(--color-accent-custom)/0.05,_transparent)] pointer-events-none" />
-            <motion.div initial="hidden" animate={inView ? "visible" : "hidden"} variants={fadeUpVariant} className="relative z-10 max-w-[700px] mx-auto">
-                <p className="text-[0.75rem] font-semibold tracking-[0.14em] uppercase text-accent-custom mb-4 justify-center flex">Let's Build</p>
-                <h2 className="font-head text-[2rem] sm:text-[3.5rem] font-extrabold tracking-tighter mb-[1.2rem] text-text-custom leading-tight">Let's build something <em className="not-italic text-accent-custom">high-performance.</em></h2>
-                <p className="text-muted-custom text-[1rem] font-light max-w-[500px] mx-auto mb-10 leading-relaxed">Whether you need critical technical repairs or a complete full-stack build from scratch, we engineer digital presence that drives business. Worldwide, no restrictions.</p>
-                <div className="flex gap-4 justify-center flex-wrap">
-                    <a href={mailToLink} className="bg-accent-custom text-bg px-8 py-[0.8rem] rounded-lg font-semibold text-[0.95rem] hover:opacity-85 transition-opacity font-body">Start a Conversation</a>
-                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-[#25d366]/10 text-[#25d366] border border-[#25d366]/25 px-8 py-[0.8rem] rounded-lg font-semibold text-[0.95rem] hover:bg-[#25d366]/15 transition-colors font-body flex items-center gap-2">
-                        WhatsApp
-                    </a>
-                </div>
-                <p className="mt-[1.8rem] text-[0.82rem] text-muted-custom">okonjedidiah5@gmail.com &nbsp;·&nbsp;&nbsp;·&nbsp; Remote-First</p>
-            </motion.div>
-        </section>
-    );
+const CTA = () => {
+  return (
+    <section id="contact" className="border-t border-border bg-secondary/60">
+      <div className="mx-auto max-w-[1600px] px-4 py-20 sm:px-6 lg:px-10 lg:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid gap-12 border border-border bg-background p-8 md:grid-cols-2 md:gap-16 md:p-12 lg:p-16"
+        >
+          <div>
+            <p className="eyebrow mb-4">Contact</p>
+            <h2 className="font-heading text-3xl font-bold uppercase tracking-[0.04em] text-foreground md:text-4xl">
+              Tell us what you&apos;re building
+            </h2>
+            <p className="mt-6 leading-relaxed text-muted-foreground">
+              Share your project scope, schedule, and success criteria. We&apos;ll respond with a clear path forward—whether you need full-stack web engineering, custom AI pipelines, or conversion rate optimization.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="mailto:okonjedidiah5@gmail.com"
+                className="btn-corporate px-8 text-center transition-transform duration-200 hover:scale-105"
+              >
+                Request a consultation
+              </a>
+              <a
+                href="https://wa.me/2347042932301?text=Hello%20Jedidiah,%20I'd%20like%20to%20discuss%20a%20project%20with%20DidehLabs."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center border border-border bg-transparent px-8 py-3 text-sm font-semibold uppercase tracking-wide text-foreground transition-all duration-200 hover:border-primary hover:scale-105 text-center"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+          <div className="space-y-8 border-t border-border pt-10 md:border-l md:border-t-0 md:pl-12 md:pt-0">
+            {[
+              { label: 'Email', value: 'okonjedidiah5@gmail.com' },
+              { label: 'WhatsApp', value: '+234 7042932301' },
+              { label: 'Response time', value: 'Within 24 hours' },
+            ].map((row) => (
+              <div key={row.label}>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">{row.label}</p>
+                {row.label === 'Email' ? (
+                  <a href="mailto:okonjedidiah5@gmail.com" className="mt-2 block font-heading text-lg font-semibold text-foreground hover:text-primary transition-colors">
+                    {row.value}
+                  </a>
+                ) : row.label === 'WhatsApp' ? (
+                  <a href="https://wa.me/2347042932301" target="_blank" rel="noopener noreferrer" className="mt-2 block font-heading text-lg font-semibold text-foreground hover:text-primary transition-colors">
+                    {row.value}
+                  </a>
+                ) : (
+                  <p className="mt-2 font-heading text-lg font-semibold text-foreground">{row.value}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
 }
 
-export default CTA;
+export default CTA
