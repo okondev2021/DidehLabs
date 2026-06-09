@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 const CTA = ({ fadeUpVariant }: { fadeUpVariant: any }) => {
     const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
     const mailToLink = "mailto:okonjedidiah5@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20DidehLabs&body=Hi%20Jedidiah%2C%0A%0AI'd%20like%20to%20discuss%20a%20project.";
-    const whatsappLink = "https://wa.me/2349062953901?text=Hi%20Jedidiah%2C%20I%20found%20DidehLabs%20and%20would%20like%20to%20discuss%20a%20project.";
+    const whatsappLink = "https://wa.me/2347042932301?text=Hi%20Jedidiah%2C%20I%20found%20DidehLabs%20and%20would%20like%20to%20discuss%20a%20project.";
 
     return (
         <section id="cta" className="bg-bg2 text-center relative overflow-hidden section-padding" ref={ref}>
