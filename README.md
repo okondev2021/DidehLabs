@@ -1,75 +1,63 @@
-# React + TypeScript + Vite
+# DidehLabs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DidehLabs is a full-stack web engineering studio focused on building high-performance digital experiences that convert visitors into customers. We combine custom web architecture, AI-powered diagnostics, and real production engineering to help businesses stop losing revenue online.
 
-Currently, two official plugins are available:
+## What We Do
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Audit, rebuild, and optimize websites for performance, conversions, and reliability.
+- Deliver custom website design and build work without templates, page builders, or agency overhead.
+- Create AI-enabled systems that detect revenue leaks and prioritize the highest-impact fixes.
+- Improve mobile experience, SEO discoverability, and conversion pathways for modern businesses.
 
-## React Compiler
+## Our Approach
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+DidehLabs is engineered around three core principles:
 
-Note: This will impact Vite dev & build performances.
+- Performance-first: slow pages cost customers. We identify bottlenecks and fix them before launch.
+- Conversion-aware: every page is built with clear action paths, WhatsApp/booking funnels, and revenue intelligence.
+- Code-first: no outsourced frameworks, no “designer handoff.” You work directly with the engineer building the system.
 
-## Expanding the ESLint configuration
+## Core Capabilities
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Website Design & Build: custom, maintainable sites built with modern stacks like React, Next.js, Django, and Tailwind.
+- Performance Engineering: end-to-end optimization for page speed, asset loading, and Core Web Vitals.
+- Mobile Experience: responsive interfaces and touch-first flows for customers on phones and tablets.
+- Conversion Architecture: booking flows, WhatsApp CTAs, lead capture systems, and optimized user journeys.
+- SEO & Discoverability: metadata, schema markup, local search readiness, and on-page SEO improvements.
+- AI Integration: purpose-built AI systems, automated pipelines, and intelligent features that actually deliver value.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## The Diagnostic Engine
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+DidehLabs starts every client engagement with an automated diagnostic audit. Our proprietary engine scans websites for:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- performance degradation
+- security gaps like missing SSL
+- broken conversion paths
+- visual asset failures
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+That means conversations begin with real insight, not generic recommendations.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Technology Focus
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The DidehLabs website highlights expertise in:
+
+- Python / Django
+- React / Next.js
+- Node.js / TypeScript
+- PostgreSQL / Firebase
+- Tailwind CSS
+- Lighthouse performance tooling
+- OpenAI / Gemini AI
+- Hedera blockchain integration
+- GCP, Vercel, Heroku deployment workflows
+
+## Values
+
+- Remote-first engagement
+- No cookie-cutter templates
+- Direct collaboration with the engineer building your product
+- Real production systems, not mockups
+
+## Licensing
+
+This repository is licensed under the MIT License. See `LICENSE` for details.
